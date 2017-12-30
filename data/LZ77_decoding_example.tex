@@ -1,0 +1,16 @@
+\documentclass{article}
+
+\begin{document}
+  \begin{tabular}{clrrl}
+    Input & Output & & Dict. & Buffer \\
+    \cline{1-2}\cline{4-5}
+    0 0 {\tt a} & {\tt a}    &                  & \multicolumn{1}{|r}{}         & \multicolumn{1}{|l|}{\tt a} \\
+    0 0 {\tt b} & {\tt b}    &                  & \multicolumn{1}{|r}{\tt a}    & \multicolumn{1}{|l|}{\tt b} \\
+    2 2 {\tt c} & {\tt abc}  &                  & \multicolumn{1}{|r}{\tt ab}   & \multicolumn{1}{|l|}{\tt abc} \\
+    0 3 {\tt a} & {\tt baba} & {\tt a}          & \multicolumn{1}{|r}{\tt babc} & \multicolumn{1}{|l|}{\tt baba} \\
+    0 2 {\tt a} & {\tt baa}  & {\tt ababc}      & \multicolumn{1}{|r}{\tt baba} & \multicolumn{1}{|l|}{\tt baa} \\
+    2 3 {\tt a} & {\tt aaaa} & {\tt ababcbabab} & \multicolumn{1}{|r}{\tt abaa} & \multicolumn{1}{|l|}{\tt aaaa} \\
+    \cline{4-5}
+    & & & 0123 & \\
+  \end{tabular}
+\end{document}

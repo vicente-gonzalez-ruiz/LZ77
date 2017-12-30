@@ -1,0 +1,17 @@
+\documentclass{article}
+\begin{document}
+\begin{tabular}{rrllcl}
+  & Dict. & Buffer & & Output & Comment \\
+  \cline{2-3}\cline{5-6}
+  % \hline
+  & \multicolumn{1}{|r}{}         & \multicolumn{1}{|l|}{\tt abab} & {\tt cbababaaaaaa} & 0 0 {\tt a} & Empty dictionary\\
+  & \multicolumn{1}{|r}{\tt a}    & \multicolumn{1}{|l|}{\tt babc} & {\tt bababaaaaaa}  & 0 0 {\tt b} & {\tt b} Not found \\
+  & \multicolumn{1}{|r}{\tt ab}   & \multicolumn{1}{|l|}{\tt abcb} & {\tt ababaaaaaa}   & 2 2 {\tt c} & {\tt ab} found \\
+  {\tt a} & \multicolumn{1}{|r}{\tt babc} & \multicolumn{1}{|l|}{\tt baba} & {\tt baaaaaa}      & 0 3 {\tt a} & {\tt bab} found \\
+  {\tt ababc} & \multicolumn{1}{|r}{\tt baba} & \multicolumn{1}{|l|}{\tt baaa} & {\tt aaa}          & 0 2 {\tt a} & {\tt ba} found \\
+  {\tt ababcbab} & \multicolumn{1}{|r}{\tt abaa} & \multicolumn{1}{|l|}{\tt aaaa} &                    & 2 3 {\tt a} & {\tt aaa} found \\
+  \cline{2-3}
+  % \hline
+  & 0123                          & \multicolumn{4}{c}{}
+\end{tabular}
+\end{document}
