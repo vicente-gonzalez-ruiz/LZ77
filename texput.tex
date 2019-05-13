@@ -1,0 +1,109 @@
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "<none>"
+%%% End:
+
+\title{Lempel and Ziv 1977 (LZ77)}
+
+\author{Vicente González Ruiz}
+
+\maketitle
+
+\section{History}
+
+\begin{itemize}
+\tightlist
+\item
+  Jacov Ziv and Abraham Lempel proposed the LZ77 algorithm in 1977~\cite{ziv1977universal}.
+\item
+  In the eighties,
+  \href{https://en.wikipedia.org/wiki/Lempel\%E2\%80\%93Ziv\%E2\%80\%93Storer\%E2\%80\%93Szymanski}{LZSS}
+  (a branch of LZ77) was implemented by Haruyasu Yoshizaki~\cite{storer1982data} (and implemented in the
+  \href{https://en.wikipedia.org/wiki/LHA_(file_format)}{LHA
+  compressor}, discovering the possibilities of the LZ77 encoder.
+\item
+  After that, a large number of text compressors have been based on LZ77
+  (or a variation of it). Some of the most famous are:
+  \href{https://en.wikipedia.org/wiki/ARJ}{ARJ},
+  {[}RAR{]}(https://en.wikipedia.org/wiki/RAR\_(file\_format),
+  \href{https://en.wikipedia.org/wiki/Gzip}{gzip} and
+  \href{https://en.wikipedia.org/wiki/7z}{7z}.
+\item
+  LZ77 processes a sequence of symbols using the structure:
+\end{itemize}
+
+\img{600}{graphics/LZ77.png}
+
+\begin{itemize}
+\tightlist
+\item
+  The dictionary and the look-ahead buffer have a fixed size and can be
+  considered as a sliding window moving over the symbols while they are
+  coded. In each iteration, the input of new symbols to the buffer
+  generates the output of the oldest ones, which become the newest
+  symbols of the dictionary.
+\end{itemize}
+
+\section{Encoder}
+
+\begin{enumerate}
+\tightlist
+\item
+  Let \(I\) the length of the dictionary and \(J\) the length of the
+  buffer.
+\item
+  Input the first \(J\) symbols in the buffer.
+\item
+  While the input is not exhausted:
+
+  \begin{enumerate}
+  \tightlist
+  \item
+    Let \(i\) the position of the first \(j\) symbols of the buffer in
+    the dictionary, and \(k\) the symbol that makes that \(j\) can not
+    be larger.
+  \item
+    Output \(ijk\).
+  \item
+    Input the next \(j+1\) symbols in the buffer.
+  \end{enumerate}
+\end{enumerate}
+
+\section{Example}
+\img{800}{graphics/LZ77_encoding_example.png}
+
+\section{Decoder}
+
+\begin{enumerate}
+\tightlist
+\item
+  While code-words \(ijk\) are input:
+
+  \begin{enumerate}
+  \tightlist
+  \item
+    Output the \(j\) symbols extracted from the position \(i\) in the
+    dictionary.
+  \item
+    Output \(k\).
+  \item
+    Put all the decoded symbols in the beginnig of the buffer.
+  \end{enumerate}
+\end{enumerate}
+
+\subsection{Example}
+\webfig{500}{graphics/LZ77_decoding_example.png}
+\begin{itemize}
+\tightlist
+\item
+  Parameters \(I\) and \(J\) control the performance of the algorithm.
+  They should be large enough to guarantee the matching of long strings,
+  but should be small in order to reduce the number of bits of the
+  code-words \(ijk\). Typical sizes are: \(\log_2(I)=12.0\) and
+  \(\log_2(J)=4.0\).
+\end{itemize}
+
+\section{Lab: LZSS}
+\href{https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/LZ77/blob/master/LZSS.ipynb}{IPython notebook}
+
+\bibliography{text-compression}
