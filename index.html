@@ -26,10 +26,26 @@ class="ecrm-1200">Vicente Gonz</span><span
 class="ecrm-1200">á</span><span 
 class="ecrm-1200">lez Ruiz</span></div><br />
 <div class="date" ><span 
-class="ecrm-1200">May 13, 2019</span></div>
+class="ecrm-1200">December 31, 2019</span></div>
    </div>
+   <h3 class="likesectionHead"><a 
+ id="x1-1000"></a>Contents</h3>
+   <div class="tableofcontents">
+   <span class="sectionToc" >1 <a 
+href="#x1-20001" id="QQ2-1-2">History</a></span>
+<br />   <span class="sectionToc" >2 <a 
+href="#x1-30002" id="QQ2-1-3">Encoder</a></span>
+<br />   <span class="sectionToc" >3 <a 
+href="#x1-50003" id="QQ2-1-5">Decoder</a></span>
+<br />   <span class="sectionToc" >4 <a 
+href="#x1-70004" id="QQ2-1-7">Lab: LZSS</a></span>
+<br />   <span class="sectionToc" ><a 
+href="#Q1-1-9">References</a></span>
+   </div>
+<!--l. 6--><p class="noindent" >
+</p>
    <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
- id="x1-10001"></a>History</h3>
+ id="x1-20001"></a>History</h3>
      <ul class="itemize1">
      <li class="itemize">Jacov Ziv and Abraham Lempel proposed the LZ77 algorithm in 1977 <span class="cite">[<a 
 href="#Xziv1977universal">2</a>]</span>.
@@ -47,9 +63,12 @@ href="https://en.wikipedia.org/wiki/ARJ" >ARJ</a>,
      [RAR](https://en.wikipedia.org/wiki/RAR_(ﬁle_format), <a 
 href="https://en.wikipedia.org/wiki/Gzip" >gzip</a> and <a 
 href="https://en.wikipedia.org/wiki/7z" >7z</a>.
+                                                                  
+
+                                                                  
      </li>
      <li class="itemize">LZ77 processes a sequence of symbols using the structure:</li></ul>
-<!--l. 35--><p class="noindent" > <div style="text-align:center;"> <img width=600 src="graphics/LZ77.png" /> </div> 
+<!--l. 28--><p class="noindent" ><div style="text-align:center;"> <img width=600 src="graphics/LZ77.svg" /> </div> 
 </p>
      <ul class="itemize1">
      <li class="itemize">The dictionary and the look-ahead buﬀer have a ﬁxed size and can be
@@ -57,22 +76,19 @@ href="https://en.wikipedia.org/wiki/7z" >7z</a>.
      coded. In each iteration, the input of new symbols to the buﬀer generates
      the output of the oldest ones, which become the newest symbols of the
      dictionary.</li></ul>
-                                                                  
-
-                                                                  
-<!--l. 47--><p class="noindent" >
+<!--l. 40--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
- id="x1-20002"></a>Encoder</h3>
-<!--l. 49--><p class="noindent" >
+ id="x1-30002"></a>Encoder</h3>
+<!--l. 42--><p class="noindent" >
      </p><ol  class="enumerate1" >
      <li 
-  class="enumerate" id="x1-2002x1">Let <!--l. 52--><math 
+  class="enumerate" id="x1-3002x1">Let <!--l. 45--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
 >I</mi></mrow></math>
-     the length of the dictionary and <!--l. 52--><math 
+     the length of the dictionary and <!--l. 45--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
@@ -80,7 +96,7 @@ display="inline" ><mrow
      the length of the buﬀer.
      </li>
      <li 
-  class="enumerate" id="x1-2004x2">Input the ﬁrst <!--l. 55--><math 
+  class="enumerate" id="x1-3004x2">Input the ﬁrst <!--l. 48--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
@@ -88,26 +104,26 @@ display="inline" ><mrow
      symbols in the buﬀer.
      </li>
      <li 
-  class="enumerate" id="x1-2006x3">While the input is not exhausted:
-     <!--l. 59--><p class="noindent" >
+  class="enumerate" id="x1-3006x3">While the input is not exhausted:
+     <!--l. 52--><p class="noindent" >
          </p><ol  class="enumerate2" >
          <li 
-  class="enumerate" id="x1-2008x1">Let <!--l. 62--><math 
+  class="enumerate" id="x1-3008x1">Let <!--l. 55--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
 >i</mi></mrow></math>
-         the position of the ﬁrst <!--l. 62--><math 
+         the position of the ﬁrst <!--l. 55--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
 >j</mi></mrow></math>
-         symbols of the buﬀer in the dictionary, and <!--l. 63--><math 
+         symbols of the buﬀer in the dictionary, and <!--l. 56--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
 >k</mi></mrow></math>
-         the symbol that makes that <!--l. 63--><math 
+         the symbol that makes that <!--l. 56--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
@@ -115,7 +131,7 @@ display="inline" ><mrow
          can not be larger.
          </li>
          <li 
-  class="enumerate" id="x1-2010x2">Output <!--l. 66--><math 
+  class="enumerate" id="x1-3010x2">Output <!--l. 59--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
@@ -124,7 +140,7 @@ display="inline" ><mrow
 >k</mi></mrow></math>.
          </li>
          <li 
-  class="enumerate" id="x1-2012x3">Input the next <!--l. 68--><math 
+  class="enumerate" id="x1-3012x3">Input the next <!--l. 61--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
@@ -132,19 +148,22 @@ display="inline" ><mrow
 class="MathClass-bin">+</mo> <mn>1</mn></mrow></math>
          symbols in the buﬀer.</li></ol>
      </li></ol>
-<!--l. 72--><p class="noindent" >
+                                                                  
+
+                                                                  
+<!--l. 65--><p class="noindent" >
+</p>
+   <h3 class="likesectionHead"><a 
+ id="x1-40002"></a>Example</h3>
+<!--l. 66--><p class="noindent" ><div style="text-align:center;"> <img width=800 src="graphics/LZ77_encoding_example.svg" /> </div> 
+</p><!--l. 68--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
- id="x1-30003"></a>Example</h3>
-<!--l. 73--><p class="noindent" > <div style="text-align:center;"> <img width=800 src="graphics/LZ77_encoding_example.png" /> </div> 
-</p><!--l. 75--><p class="noindent" >
-</p>
-   <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
- id="x1-40004"></a>Decoder</h3>
-<!--l. 77--><p class="noindent" >
+ id="x1-50003"></a>Decoder</h3>
+<!--l. 70--><p class="noindent" >
      </p><ol  class="enumerate1" >
      <li 
-  class="enumerate" id="x1-4002x1">While code-words <!--l. 80--><math 
+  class="enumerate" id="x1-5002x1">While code-words <!--l. 73--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
@@ -152,18 +171,15 @@ display="inline" ><mrow
 >j</mi><mi 
 >k</mi></mrow></math>
      are input:
-     <!--l. 82--><p class="noindent" >
-                                                                  
-
-                                                                  
+     <!--l. 75--><p class="noindent" >
          </p><ol  class="enumerate2" >
          <li 
-  class="enumerate" id="x1-4004x1">Output the <!--l. 85--><math 
+  class="enumerate" id="x1-5004x1">Output the <!--l. 78--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
 >j</mi></mrow></math>
-         symbols extracted from the position <!--l. 85--><math 
+         symbols extracted from the position <!--l. 78--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
@@ -171,41 +187,41 @@ display="inline" ><mrow
          in the dictionary.
          </li>
          <li 
-  class="enumerate" id="x1-4006x2">Output <!--l. 88--><math 
+  class="enumerate" id="x1-5006x2">Output <!--l. 81--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
 >k</mi></mrow></math>.
          </li>
          <li 
-  class="enumerate" id="x1-4008x3">Put all the decoded symbols in the beginnig of the buﬀer.</li></ol>
+  class="enumerate" id="x1-5008x3">Put all the decoded symbols in the beginnig of the buﬀer.</li></ol>
      </li></ol>
-<!--l. 94--><p class="noindent" >
+<!--l. 87--><p class="noindent" >
 </p>
-   <h4 class="subsectionHead"><span class="titlemark">4.1   </span> <a 
- id="x1-50004.1"></a>Example</h4>
-<!--l. 95--><p class="noindent" > <div style="text-align:center;"> <img width=500 src="graphics/LZ77_decoding_example.png" /> </div>  </p>
+   <h3 class="likesectionHead"><a 
+ id="x1-60003"></a>Example</h3>
+<!--l. 88--><p class="noindent" ><div style="text-align:center;"> <img width=500 src="graphics/LZ77_decoding_example.svg" /> </div>  </p>
      <ul class="itemize1">
-     <li class="itemize">Parameters <!--l. 99--><math 
+     <li class="itemize">Parameters <!--l. 92--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
 >I</mi></mrow></math>
-     and <!--l. 99--><math 
+     and <!--l. 92--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
 >J</mi></mrow></math>
      control the performance of the algorithm. They should be large enough to
      guarantee the matching of long strings, but should be small in order to
-     reduce the number of bits of the code-words <!--l. 102--><math 
+     reduce the number of bits of the code-words <!--l. 95--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><mi 
 >i</mi><mi 
 >j</mi><mi 
 >k</mi></mrow></math>.
-     Typical sizes are: <!--l. 102--><math 
+     Typical sizes are: <!--l. 95--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msub><mrow 
@@ -217,7 +233,7 @@ class="MathClass-open">(</mo><mrow><mi
 class="MathClass-close">)</mo></mrow> <mo 
 class="MathClass-rel">=</mo> <mn>1</mn><mn>2</mn><mo 
 class="MathClass-punc">.</mo><mn>0</mn></mrow></math>
-     and <!--l. 103--><math 
+     and <!--l. 96--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mrow 
 ><msub><mrow 
@@ -229,16 +245,19 @@ class="MathClass-open">(</mo><mrow><mi
 class="MathClass-close">)</mo></mrow> <mo 
 class="MathClass-rel">=</mo> <mn>4</mn><mo 
 class="MathClass-punc">.</mo><mn>0</mn></mrow></math>.</li></ul>
-<!--l. 106--><p class="noindent" >
+                                                                  
+
+                                                                  
+<!--l. 99--><p class="noindent" >
 </p>
-   <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
- id="x1-60005"></a>Lab: LZSS</h3>
-<!--l. 107--><p class="noindent" ><a 
+   <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
+ id="x1-70004"></a>Lab: LZSS</h3>
+<!--l. 100--><p class="noindent" ><a 
 href="https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/LZ77/blob/master/LZSS.ipynb" >IPython notebook</a>
 </p><!--l. 1--><p class="noindent" >
 </p>
    <h3 class="likesectionHead"><a 
- id="x1-70005"></a>References</h3>
+ id="x1-80004"></a>References</h3>
 <!--l. 1--><p class="noindent" >
    </p><div class="thebibliography">
    <p class="bibitem" ><span class="biblabel">
@@ -247,9 +266,6 @@ href="https://nbviewer.jupyter.org/github/vicente-gonzalez-ruiz/LZ77/blob/master
 href="https://scholar.google.es/scholar?hl=es&as_sdt=0%2C5&q=Data+compression+via+textual+substitution&btnG=" >Data  compression  via
    textual substitution</a>. <span 
 class="ecti-1000">Journal of the ACM (JACM)</span>, 29(4):928–951, 1982.
-                                                                  
-
-                                                                  
    </p>
    <p class="bibitem" ><span class="biblabel">
  [2]<span class="bibsp">   </span></span><a 
@@ -260,6 +276,8 @@ class="ecti-1000">IEEE Transactions on information theory</span>, 23(3):337–34
    1977.
 </p>
    </div>
+<a 
+ id="Q1-1-9"></a>
     
 </body> 
 </html>
